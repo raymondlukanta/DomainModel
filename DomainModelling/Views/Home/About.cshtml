@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+
+@Scripts.Render("~/Scripts/jquery-1.8.2.min.js")
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        map = createMap(document.getElementById('map_pilihlokasi'));
+
+    });
+</script>
+<article>
+ <div id="map_pilihlokasi" style="height: 600px; width: 100%"></div>
+</article>
+
+<aside>
+    <h3>Aside Title</h3>
+    
+    <ul>
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li>@Html.ActionLink("About", "About", "Home")</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+    </ul>
+</aside>
