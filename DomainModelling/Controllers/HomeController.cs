@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DomainModelling.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace DomainModelling.Controllers
 {
     public class HomeController : Controller
     {
+        private mydbEntities db = new mydbEntities();
         public ActionResult Index()
         {
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
@@ -17,9 +19,10 @@ namespace DomainModelling.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your app description page.";
+            ListStops stop = new ListStops();
+            stop.stopList = db.stops.ToList();
 
-            return View();
+            return View(stop);
         }
 
         public ActionResult Contact()

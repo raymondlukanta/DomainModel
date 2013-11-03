@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3db90b8065184b79b5360b1b20514892" Name="Diagram1">
+        <EntityTypeShape EntityType="mydbModel.agency" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="mydbModel.calendar" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="mydbModel.frequency" Width="1.5" PointX="7.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="mydbModel.route" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="mydbModel.shape" Width="1.5" PointX="2.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="mydbModel.stop_times" Width="1.5" PointX="10.5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="mydbModel.stop" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="mydbModel.transfer" Width="1.5" PointX="10.5" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="mydbModel.trip" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="mydbModel.route_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="mydbModel.frequency_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="mydbModel.trip_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="mydbModel.stop_times_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="mydbModel.stop_times_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="mydbModel.transfer_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="mydbModel.transfer_ibfk_2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

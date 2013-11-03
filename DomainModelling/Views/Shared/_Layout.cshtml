@@ -12,13 +12,13 @@
             function createMap(mapContainer) {
                 var mapOptions = {
                     zoom: 13,
-                    center: new google.maps.LatLng(-6.1333, 106.7500), // Jakarta
+                    center: new google.maps.LatLng(40.680051, -73.583913),
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 };
 
                 return new google.maps.Map(mapContainer, mapOptions);
             }
-            function plotMarker(source) {
+            function plotMarker(latitude, longitude) {
                 //var image = {
                 //    url: "images/marker.png",
                 //    origin: new google.maps.Point(0, 0),
@@ -26,7 +26,7 @@
                 //};
 
                 marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(source.latitude, source.longitude),
+                    position: new google.maps.LatLng(latitude, longitude),
                     map: map,
                     //title: source.name,
                     //url: source.name,

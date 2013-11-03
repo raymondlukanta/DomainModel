@@ -1,4 +1,6 @@
-﻿@{
+﻿@model DomainModelling.Models.ListStops
+
+@{
     ViewBag.Title = "About";
 }
 
@@ -10,10 +12,26 @@
 @Scripts.Render("~/Scripts/jquery-1.8.2.min.js")
 
 <script type="text/javascript">
+    var map;
+    var array = new Array();
     $(document).ready(function () {
         map = createMap(document.getElementById('map_pilihlokasi'));
-
+         @foreach (var stop in Model.stopList)
+    {
+       string message ="";
+        message += "array[0]=" + stop.stop_lat + ";";
+        message += "array[1]=" + stop.stop_lon + ";";
+        
+         @MvcHtmlString.Create(message);
+        
+        <text>
+        plotMarker(array[0], array[1]);
+        </text>
+    }
     });
+
+
+   
 </script>
 <article>
  <div id="map_pilihlokasi" style="height: 600px; width: 100%"></div>
