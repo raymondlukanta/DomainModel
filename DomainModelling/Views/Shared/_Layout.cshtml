@@ -18,7 +18,7 @@
 
                 return new google.maps.Map(mapContainer, mapOptions);
             }
-            function plotMarker(latitude, longitude) {
+            function plotMarker(latitude, longitude,name) {
                 //var image = {
                 //    url: "images/marker.png",
                 //    origin: new google.maps.Point(0, 0),
@@ -28,7 +28,7 @@
                 marker = new google.maps.Marker({
                     position: new google.maps.LatLng(latitude, longitude),
                     map: map,
-                    //title: source.name,
+                    title: name
                     //url: source.name,
                    // icon: image
                 });

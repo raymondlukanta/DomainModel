@@ -21,11 +21,11 @@
        string message ="";
         message += "array[0]=" + stop.stop_lat + ";";
         message += "array[1]=" + stop.stop_lon + ";";
-        
+        message += "array[2]=\"" + stop.stop_name + "\";";
          @MvcHtmlString.Create(message);
         
         <text>
-        plotMarker(array[0], array[1]);
+        plotMarker(array[0], array[1], array[2]);
         </text>
     }
     });
