@@ -12,7 +12,7 @@ namespace DomainModelling.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class stop_times
+    public partial class StopTime
     {
         public string trip_id { get; set; }
         public System.TimeSpan arrival_time { get; set; }
@@ -24,7 +24,7 @@ namespace DomainModelling.Models
         public Nullable<double> shape_distance_travelled { get; set; }
         public int stop_sequence { get; set; }
     
-        public virtual trip trip { get; set; }
-        public virtual stop stop { get; set; }
+        public virtual Trip trip { get; set; }
+        public virtual Stop stops { get; set; }
     }
 }

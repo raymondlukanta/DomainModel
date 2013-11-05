@@ -9,7 +9,7 @@ namespace DomainModelling.Controllers
 {
     public class HomeController : Controller
     {
-        private mydbEntities db = new mydbEntities();
+        private GtfsEntities db = new GtfsEntities();
         public ActionResult Index()
         {
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
@@ -20,7 +20,7 @@ namespace DomainModelling.Controllers
         public ActionResult About()
         {
             ListStops stop = new ListStops();
-            stop.stopList = db.stops.ToList();
+            stop.stopList = db.Stops.ToList();
 
             return View(stop);
         }
@@ -29,6 +29,11 @@ namespace DomainModelling.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        public ActionResult Map()
+        {
             return View();
         }
     }

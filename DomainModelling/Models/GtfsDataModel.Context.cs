@@ -13,10 +13,10 @@ namespace DomainModelling.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class mydbEntities : DbContext
+    public partial class GtfsEntities : DbContext
     {
-        public mydbEntities()
-            : base("name=mydbEntities")
+        public GtfsEntities()
+            : base("name=GtfsEntities")
         {
         }
     
@@ -25,14 +25,14 @@ namespace DomainModelling.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<agency> agencies { get; set; }
-        public DbSet<calendar> calendars { get; set; }
-        public DbSet<frequency> frequencies { get; set; }
-        public DbSet<route> routes { get; set; }
-        public DbSet<shape> shapes { get; set; }
-        public DbSet<stop_times> stop_times { get; set; }
-        public DbSet<stop> stops { get; set; }
-        public DbSet<transfer> transfers { get; set; }
-        public DbSet<trip> trips { get; set; }
+        public DbSet<Agency> agencies { get; set; }
+        public DbSet<Calendar> calendar { get; set; }
+        public DbSet<Frequency> frequencies { get; set; }
+        public DbSet<Route> routes { get; set; }
+        public DbSet<Shape> shapes { get; set; }
+        public DbSet<StopTime> stop_times { get; set; }
+        public DbSet<Stop> Stops { get; set; }
+        public DbSet<Transfer> transfers { get; set; }
+        public DbSet<Trip> trips { get; set; }
     }
 }

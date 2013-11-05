@@ -4,10 +4,10 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="mydbModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="mydbModelStoreContainer">
-          <EntitySet Name="agency" EntityType="mydbModel.Store.agency" store:Type="Tables" Schema="mydb" />
-          <EntitySet Name="calendar" EntityType="mydbModel.Store.calendar" store:Type="Tables" store:Schema="mydb" store:Name="calendar">
+      <Schema Namespace="GtfsDataModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="GtfsDataModelStoreContainer">
+          <EntitySet Name="agency" EntityType="GtfsDataModel.Store.agency" store:Type="Tables" Schema="mydb" />
+          <EntitySet Name="calendar" EntityType="GtfsDataModel.Store.calendar" store:Type="Tables" store:Schema="mydb" store:Name="calendar">
             <DefiningQuery>SELECT
       `calendar`.`service_id`, 
       `calendar`.`monday`, 
@@ -21,7 +21,7 @@
       `calendar`.`end_date`
       FROM `calendar` AS `calendar`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="frequencies" EntityType="mydbModel.Store.frequencies" store:Type="Tables" store:Schema="mydb" store:Name="frequencies">
+          <EntitySet Name="frequencies" EntityType="GtfsDataModel.Store.frequencies" store:Type="Tables" store:Schema="mydb" store:Name="frequencies">
             <DefiningQuery>SELECT
       `frequencies`.`trip_id`, 
       `frequencies`.`start_time`, 
@@ -29,9 +29,9 @@
       `frequencies`.`headway_secs`
       FROM `frequencies` AS `frequencies`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="route" EntityType="mydbModel.Store.route" store:Type="Tables" Schema="mydb" />
-          <EntitySet Name="shapes" EntityType="mydbModel.Store.shapes" store:Type="Tables" Schema="mydb" />
-          <EntitySet Name="stop_times" EntityType="mydbModel.Store.stop_times" store:Type="Tables" store:Schema="mydb" store:Name="stop_times">
+          <EntitySet Name="route" EntityType="GtfsDataModel.Store.route" store:Type="Tables" Schema="mydb" />
+          <EntitySet Name="shapes" EntityType="GtfsDataModel.Store.shapes" store:Type="Tables" Schema="mydb" />
+          <EntitySet Name="stop_times" EntityType="GtfsDataModel.Store.stop_times" store:Type="Tables" store:Schema="mydb" store:Name="stop_times">
             <DefiningQuery>SELECT
       `stop_times`.`trip_id`, 
       `stop_times`.`arrival_time`, 
@@ -44,8 +44,8 @@
       `stop_times`.`stop_sequence`
       FROM `stop_times` AS `stop_times`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="stops" EntityType="mydbModel.Store.stops" store:Type="Tables" Schema="mydb" />
-          <EntitySet Name="transfer" EntityType="mydbModel.Store.transfer" store:Type="Tables" store:Schema="mydb" store:Name="transfer">
+          <EntitySet Name="stops" EntityType="GtfsDataModel.Store.stops" store:Type="Tables" Schema="mydb" />
+          <EntitySet Name="transfer" EntityType="GtfsDataModel.Store.transfer" store:Type="Tables" store:Schema="mydb" store:Name="transfer">
             <DefiningQuery>SELECT
       `transfer`.`from_stop_id`, 
       `transfer`.`to_stop_id`, 
@@ -53,32 +53,32 @@
       `transfer`.`min_transfer_time`
       FROM `transfer` AS `transfer`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="trip" EntityType="mydbModel.Store.trip" store:Type="Tables" Schema="mydb" />
-          <AssociationSet Name="frequency_ibfk_1" Association="mydbModel.Store.frequency_ibfk_1">
+          <EntitySet Name="trip" EntityType="GtfsDataModel.Store.trip" store:Type="Tables" Schema="mydb" />
+          <AssociationSet Name="frequency_ibfk_1" Association="GtfsDataModel.Store.frequency_ibfk_1">
             <End Role="trip" EntitySet="trip" />
             <End Role="frequencies" EntitySet="frequencies" />
           </AssociationSet>
-          <AssociationSet Name="route_ibfk_1" Association="mydbModel.Store.route_ibfk_1">
+          <AssociationSet Name="route_ibfk_1" Association="GtfsDataModel.Store.route_ibfk_1">
             <End Role="agency" EntitySet="agency" />
             <End Role="route" EntitySet="route" />
           </AssociationSet>
-          <AssociationSet Name="stop_times_ibfk_1" Association="mydbModel.Store.stop_times_ibfk_1">
+          <AssociationSet Name="stop_times_ibfk_1" Association="GtfsDataModel.Store.stop_times_ibfk_1">
             <End Role="trip" EntitySet="trip" />
             <End Role="stop_times" EntitySet="stop_times" />
           </AssociationSet>
-          <AssociationSet Name="stop_times_ibfk_2" Association="mydbModel.Store.stop_times_ibfk_2">
+          <AssociationSet Name="stop_times_ibfk_2" Association="GtfsDataModel.Store.stop_times_ibfk_2">
             <End Role="stops" EntitySet="stops" />
             <End Role="stop_times" EntitySet="stop_times" />
           </AssociationSet>
-          <AssociationSet Name="transfer_ibfk_1" Association="mydbModel.Store.transfer_ibfk_1">
+          <AssociationSet Name="transfer_ibfk_1" Association="GtfsDataModel.Store.transfer_ibfk_1">
             <End Role="stops" EntitySet="stops" />
             <End Role="transfer" EntitySet="transfer" />
           </AssociationSet>
-          <AssociationSet Name="transfer_ibfk_2" Association="mydbModel.Store.transfer_ibfk_2">
+          <AssociationSet Name="transfer_ibfk_2" Association="GtfsDataModel.Store.transfer_ibfk_2">
             <End Role="stops" EntitySet="stops" />
             <End Role="transfer" EntitySet="transfer" />
           </AssociationSet>
-          <AssociationSet Name="trip_ibfk_1" Association="mydbModel.Store.trip_ibfk_1">
+          <AssociationSet Name="trip_ibfk_1" Association="GtfsDataModel.Store.trip_ibfk_1">
             <End Role="route" EntitySet="route" />
             <End Role="trip" EntitySet="trip" />
           </AssociationSet>
@@ -227,8 +227,8 @@
           <Property Name="shape_id" Type="varchar" MaxLength="10" />
         </EntityType>
         <Association Name="frequency_ibfk_1">
-          <End Role="trip" Type="mydbModel.Store.trip" Multiplicity="1" />
-          <End Role="frequencies" Type="mydbModel.Store.frequencies" Multiplicity="*" />
+          <End Role="trip" Type="GtfsDataModel.Store.trip" Multiplicity="1" />
+          <End Role="frequencies" Type="GtfsDataModel.Store.frequencies" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="trip">
               <PropertyRef Name="trip_id" />
@@ -239,8 +239,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="route_ibfk_1">
-          <End Role="agency" Type="mydbModel.Store.agency" Multiplicity="0..1" />
-          <End Role="route" Type="mydbModel.Store.route" Multiplicity="*" />
+          <End Role="agency" Type="GtfsDataModel.Store.agency" Multiplicity="0..1" />
+          <End Role="route" Type="GtfsDataModel.Store.route" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="agency">
               <PropertyRef Name="agency_id" />
@@ -251,8 +251,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="stop_times_ibfk_1">
-          <End Role="trip" Type="mydbModel.Store.trip" Multiplicity="1" />
-          <End Role="stop_times" Type="mydbModel.Store.stop_times" Multiplicity="*" />
+          <End Role="trip" Type="GtfsDataModel.Store.trip" Multiplicity="1" />
+          <End Role="stop_times" Type="GtfsDataModel.Store.stop_times" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="trip">
               <PropertyRef Name="trip_id" />
@@ -263,8 +263,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="stop_times_ibfk_2">
-          <End Role="stops" Type="mydbModel.Store.stops" Multiplicity="1" />
-          <End Role="stop_times" Type="mydbModel.Store.stop_times" Multiplicity="*" />
+          <End Role="stops" Type="GtfsDataModel.Store.stops" Multiplicity="1" />
+          <End Role="stop_times" Type="GtfsDataModel.Store.stop_times" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="stops">
               <PropertyRef Name="stop_id" />
@@ -275,8 +275,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="transfer_ibfk_1">
-          <End Role="stops" Type="mydbModel.Store.stops" Multiplicity="1" />
-          <End Role="transfer" Type="mydbModel.Store.transfer" Multiplicity="*" />
+          <End Role="stops" Type="GtfsDataModel.Store.stops" Multiplicity="1" />
+          <End Role="transfer" Type="GtfsDataModel.Store.transfer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="stops">
               <PropertyRef Name="stop_id" />
@@ -287,8 +287,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="transfer_ibfk_2">
-          <End Role="stops" Type="mydbModel.Store.stops" Multiplicity="1" />
-          <End Role="transfer" Type="mydbModel.Store.transfer" Multiplicity="*" />
+          <End Role="stops" Type="GtfsDataModel.Store.stops" Multiplicity="1" />
+          <End Role="transfer" Type="GtfsDataModel.Store.transfer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="stops">
               <PropertyRef Name="stop_id" />
@@ -299,8 +299,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="trip_ibfk_1">
-          <End Role="route" Type="mydbModel.Store.route" Multiplicity="1" />
-          <End Role="trip" Type="mydbModel.Store.trip" Multiplicity="*" />
+          <End Role="route" Type="GtfsDataModel.Store.route" Multiplicity="1" />
+          <End Role="trip" Type="GtfsDataModel.Store.trip" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="route">
               <PropertyRef Name="route_id" />
@@ -314,47 +314,47 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="mydbModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="mydbEntities" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="agencies" EntityType="mydbModel.agency" />
-          <EntitySet Name="calendars" EntityType="mydbModel.calendar" />
-          <EntitySet Name="frequencies" EntityType="mydbModel.frequency" />
-          <EntitySet Name="routes" EntityType="mydbModel.route" />
-          <EntitySet Name="shapes" EntityType="mydbModel.shape" />
-          <EntitySet Name="stop_times" EntityType="mydbModel.stop_times" />
-          <EntitySet Name="stops" EntityType="mydbModel.stop" />
-          <EntitySet Name="transfers" EntityType="mydbModel.transfer" />
-          <EntitySet Name="trips" EntityType="mydbModel.trip" />
-          <AssociationSet Name="route_ibfk_1" Association="mydbModel.route_ibfk_1">
+      <Schema Namespace="GtfsDataModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="GtfsEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="agencies" EntityType="GtfsDataModel.Agency" />
+          <EntitySet Name="calendar" EntityType="GtfsDataModel.Calendar" />
+          <EntitySet Name="frequencies" EntityType="GtfsDataModel.Frequency" />
+          <EntitySet Name="routes" EntityType="GtfsDataModel.Route" />
+          <EntitySet Name="shapes" EntityType="GtfsDataModel.Shape" />
+          <EntitySet Name="stop_times" EntityType="GtfsDataModel.StopTime" />
+          <EntitySet Name="Stops" EntityType="GtfsDataModel.Stop" />
+          <EntitySet Name="transfers" EntityType="GtfsDataModel.Transfer" />
+          <EntitySet Name="trips" EntityType="GtfsDataModel.Trip" />
+          <AssociationSet Name="route_ibfk_1" Association="GtfsDataModel.route_ibfk_1">
             <End Role="agency" EntitySet="agencies" />
             <End Role="route" EntitySet="routes" />
           </AssociationSet>
-          <AssociationSet Name="frequency_ibfk_1" Association="mydbModel.frequency_ibfk_1">
+          <AssociationSet Name="frequency_ibfk_1" Association="GtfsDataModel.frequency_ibfk_1">
             <End Role="trip" EntitySet="trips" />
             <End Role="frequencies" EntitySet="frequencies" />
           </AssociationSet>
-          <AssociationSet Name="trip_ibfk_1" Association="mydbModel.trip_ibfk_1">
+          <AssociationSet Name="trip_ibfk_1" Association="GtfsDataModel.trip_ibfk_1">
             <End Role="route" EntitySet="routes" />
             <End Role="trip" EntitySet="trips" />
           </AssociationSet>
-          <AssociationSet Name="stop_times_ibfk_1" Association="mydbModel.stop_times_ibfk_1">
+          <AssociationSet Name="stop_times_ibfk_1" Association="GtfsDataModel.stop_times_ibfk_1">
             <End Role="trip" EntitySet="trips" />
             <End Role="stop_times" EntitySet="stop_times" />
           </AssociationSet>
-          <AssociationSet Name="stop_times_ibfk_2" Association="mydbModel.stop_times_ibfk_2">
-            <End Role="stops" EntitySet="stops" />
+          <AssociationSet Name="stop_times_ibfk_2" Association="GtfsDataModel.stop_times_ibfk_2">
+            <End Role="stops" EntitySet="Stops" />
             <End Role="stop_times" EntitySet="stop_times" />
           </AssociationSet>
-          <AssociationSet Name="transfer_ibfk_1" Association="mydbModel.transfer_ibfk_1">
-            <End Role="stops" EntitySet="stops" />
+          <AssociationSet Name="transfer_ibfk_1" Association="GtfsDataModel.transfer_ibfk_1">
+            <End Role="stops" EntitySet="Stops" />
             <End Role="transfer" EntitySet="transfers" />
           </AssociationSet>
-          <AssociationSet Name="transfer_ibfk_2" Association="mydbModel.transfer_ibfk_2">
-            <End Role="stops" EntitySet="stops" />
+          <AssociationSet Name="transfer_ibfk_2" Association="GtfsDataModel.transfer_ibfk_2">
+            <End Role="stops" EntitySet="Stops" />
             <End Role="transfer" EntitySet="transfers" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="agency">
+        <EntityType Name="Agency">
           <Key>
             <PropertyRef Name="agency_id" />
           </Key>
@@ -364,9 +364,9 @@
           <Property Name="agency_time_zone" Type="String" Nullable="false" MaxLength="65535" Unicode="false" FixedLength="false" />
           <Property Name="agency_lang" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
           <Property Name="agency_phone" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="routes" Relationship="mydbModel.route_ibfk_1" FromRole="agency" ToRole="route" />
+          <NavigationProperty Name="route" Relationship="GtfsDataModel.route_ibfk_1" FromRole="agency" ToRole="route" />
         </EntityType>
-        <EntityType Name="calendar">
+        <EntityType Name="Calendar">
           <Key>
             <PropertyRef Name="service_id" />
             <PropertyRef Name="monday" />
@@ -387,10 +387,10 @@
           <Property Name="friday" Type="Int32" Nullable="false" />
           <Property Name="saturday" Type="Int32" Nullable="false" />
           <Property Name="sunday" Type="Int32" Nullable="false" />
-          <Property Name="start_date" Type="DateTime" Nullable="false" />
-          <Property Name="end_date" Type="DateTime" Nullable="false" />
+          <Property Name="start_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="end_date" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
-        <EntityType Name="frequency">
+        <EntityType Name="Frequency">
           <Key>
             <PropertyRef Name="trip_id" />
             <PropertyRef Name="start_time" />
@@ -398,12 +398,12 @@
             <PropertyRef Name="headway_secs" />
           </Key>
           <Property Name="trip_id" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
-          <Property Name="start_time" Type="Time" Nullable="false" />
-          <Property Name="end_time" Type="Time" Nullable="false" />
+          <Property Name="start_time" Type="Time" Nullable="false" Precision="0" />
+          <Property Name="end_time" Type="Time" Nullable="false" Precision="0" />
           <Property Name="headway_secs" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="trip" Relationship="mydbModel.frequency_ibfk_1" FromRole="frequencies" ToRole="trip" />
+          <NavigationProperty Name="trip" Relationship="GtfsDataModel.frequency_ibfk_1" FromRole="frequencies" ToRole="trip" />
         </EntityType>
-        <EntityType Name="route">
+        <EntityType Name="Route">
           <Key>
             <PropertyRef Name="route_id" />
           </Key>
@@ -416,10 +416,10 @@
           <Property Name="route_colour" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
           <Property Name="route_url" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
           <Property Name="route_text_colour" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="agency" Relationship="mydbModel.route_ibfk_1" FromRole="route" ToRole="agency" />
-          <NavigationProperty Name="trips" Relationship="mydbModel.trip_ibfk_1" FromRole="route" ToRole="trip" />
+          <NavigationProperty Name="agency" Relationship="GtfsDataModel.route_ibfk_1" FromRole="route" ToRole="agency" />
+          <NavigationProperty Name="trip" Relationship="GtfsDataModel.trip_ibfk_1" FromRole="route" ToRole="trip" />
         </EntityType>
-        <EntityType Name="shape">
+        <EntityType Name="Shape">
           <Key>
             <PropertyRef Name="shape_id" />
             <PropertyRef Name="shape_pt_sequence" />
@@ -430,7 +430,7 @@
           <Property Name="shape_pt_sequence" Type="Int32" Nullable="false" />
           <Property Name="shape_dist_travelled" Type="Double" />
         </EntityType>
-        <EntityType Name="stop_times">
+        <EntityType Name="StopTime">
           <Key>
             <PropertyRef Name="trip_id" />
             <PropertyRef Name="arrival_time" />
@@ -439,18 +439,18 @@
             <PropertyRef Name="stop_sequence" />
           </Key>
           <Property Name="trip_id" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
-          <Property Name="arrival_time" Type="Time" Nullable="false" />
-          <Property Name="departure_time" Type="Time" Nullable="false" />
+          <Property Name="arrival_time" Type="Time" Nullable="false" Precision="0" />
+          <Property Name="departure_time" Type="Time" Nullable="false" Precision="0" />
           <Property Name="stop_id" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="stop_headsign" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
           <Property Name="pickup_type" Type="Int32" />
           <Property Name="dropoff_type" Type="Int32" />
           <Property Name="shape_distance_travelled" Type="Double" />
           <Property Name="stop_sequence" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="trip" Relationship="mydbModel.stop_times_ibfk_1" FromRole="stop_times" ToRole="trip" />
-          <NavigationProperty Name="stop" Relationship="mydbModel.stop_times_ibfk_2" FromRole="stop_times" ToRole="stops" />
+          <NavigationProperty Name="trip" Relationship="GtfsDataModel.stop_times_ibfk_1" FromRole="stop_times" ToRole="trip" />
+          <NavigationProperty Name="stops" Relationship="GtfsDataModel.stop_times_ibfk_2" FromRole="stop_times" ToRole="stops" />
         </EntityType>
-        <EntityType Name="stop">
+        <EntityType Name="Stop">
           <Key>
             <PropertyRef Name="stop_id" />
           </Key>
@@ -463,11 +463,11 @@
           <Property Name="parent_station" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
           <Property Name="zone_id" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="stop_url" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="stop_times" Relationship="mydbModel.stop_times_ibfk_2" FromRole="stops" ToRole="stop_times" />
-          <NavigationProperty Name="transfers" Relationship="mydbModel.transfer_ibfk_1" FromRole="stops" ToRole="transfer" />
-          <NavigationProperty Name="transfers1" Relationship="mydbModel.transfer_ibfk_2" FromRole="stops" ToRole="transfer" />
+          <NavigationProperty Name="stop_times" Relationship="GtfsDataModel.stop_times_ibfk_2" FromRole="stops" ToRole="stop_times" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Internal" />
+          <NavigationProperty Name="transfer" Relationship="GtfsDataModel.transfer_ibfk_1" FromRole="stops" ToRole="transfer" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Internal" />
+          <NavigationProperty Name="transfer1" Relationship="GtfsDataModel.transfer_ibfk_2" FromRole="stops" ToRole="transfer" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Internal" />
         </EntityType>
-        <EntityType Name="transfer">
+        <EntityType Name="Transfer">
           <Key>
             <PropertyRef Name="from_stop_id" />
             <PropertyRef Name="to_stop_id" />
@@ -478,10 +478,10 @@
           <Property Name="to_stop_id" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="transfer_type" Type="Int32" Nullable="false" />
           <Property Name="min_transfer_time" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="stop" Relationship="mydbModel.transfer_ibfk_1" FromRole="transfer" ToRole="stops" />
-          <NavigationProperty Name="stop1" Relationship="mydbModel.transfer_ibfk_2" FromRole="transfer" ToRole="stops" />
+          <NavigationProperty Name="stops" Relationship="GtfsDataModel.transfer_ibfk_1" FromRole="transfer" ToRole="stops" />
+          <NavigationProperty Name="stops1" Relationship="GtfsDataModel.transfer_ibfk_2" FromRole="transfer" ToRole="stops" />
         </EntityType>
-        <EntityType Name="trip">
+        <EntityType Name="Trip">
           <Key>
             <PropertyRef Name="trip_id" />
           </Key>
@@ -492,13 +492,13 @@
           <Property Name="direction_id" Type="Int32" />
           <Property Name="block_id" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="shape_id" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="frequencies" Relationship="mydbModel.frequency_ibfk_1" FromRole="trip" ToRole="frequencies" />
-          <NavigationProperty Name="route" Relationship="mydbModel.trip_ibfk_1" FromRole="trip" ToRole="route" />
-          <NavigationProperty Name="stop_times" Relationship="mydbModel.stop_times_ibfk_1" FromRole="trip" ToRole="stop_times" />
+          <NavigationProperty Name="frequencies" Relationship="GtfsDataModel.frequency_ibfk_1" FromRole="trip" ToRole="frequencies" />
+          <NavigationProperty Name="route" Relationship="GtfsDataModel.trip_ibfk_1" FromRole="trip" ToRole="route" />
+          <NavigationProperty Name="stop_times" Relationship="GtfsDataModel.stop_times_ibfk_1" FromRole="trip" ToRole="stop_times" />
         </EntityType>
         <Association Name="route_ibfk_1">
-          <End Role="agency" Type="mydbModel.agency" Multiplicity="0..1" />
-          <End Role="route" Type="mydbModel.route" Multiplicity="*" />
+          <End Role="agency" Type="GtfsDataModel.Agency" Multiplicity="0..1" />
+          <End Role="route" Type="GtfsDataModel.Route" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="agency">
               <PropertyRef Name="agency_id" />
@@ -509,8 +509,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="frequency_ibfk_1">
-          <End Role="trip" Type="mydbModel.trip" Multiplicity="1" />
-          <End Role="frequencies" Type="mydbModel.frequency" Multiplicity="*" />
+          <End Role="trip" Type="GtfsDataModel.Trip" Multiplicity="1" />
+          <End Role="frequencies" Type="GtfsDataModel.Frequency" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="trip">
               <PropertyRef Name="trip_id" />
@@ -521,8 +521,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="trip_ibfk_1">
-          <End Role="route" Type="mydbModel.route" Multiplicity="1" />
-          <End Role="trip" Type="mydbModel.trip" Multiplicity="*" />
+          <End Role="route" Type="GtfsDataModel.Route" Multiplicity="1" />
+          <End Role="trip" Type="GtfsDataModel.Trip" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="route">
               <PropertyRef Name="route_id" />
@@ -533,8 +533,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="stop_times_ibfk_1">
-          <End Role="trip" Type="mydbModel.trip" Multiplicity="1" />
-          <End Role="stop_times" Type="mydbModel.stop_times" Multiplicity="*" />
+          <End Role="trip" Type="GtfsDataModel.Trip" Multiplicity="1" />
+          <End Role="stop_times" Type="GtfsDataModel.StopTime" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="trip">
               <PropertyRef Name="trip_id" />
@@ -545,8 +545,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="stop_times_ibfk_2">
-          <End Role="stops" Type="mydbModel.stop" Multiplicity="1" />
-          <End Role="stop_times" Type="mydbModel.stop_times" Multiplicity="*" />
+          <End Role="stops" Type="GtfsDataModel.Stop" Multiplicity="1" />
+          <End Role="stop_times" Type="GtfsDataModel.StopTime" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="stops">
               <PropertyRef Name="stop_id" />
@@ -557,8 +557,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="transfer_ibfk_1">
-          <End Role="stops" Type="mydbModel.stop" Multiplicity="1" />
-          <End Role="transfer" Type="mydbModel.transfer" Multiplicity="*" />
+          <End Role="stops" Type="GtfsDataModel.Stop" Multiplicity="1" />
+          <End Role="transfer" Type="GtfsDataModel.Transfer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="stops">
               <PropertyRef Name="stop_id" />
@@ -569,8 +569,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="transfer_ibfk_2">
-          <End Role="stops" Type="mydbModel.stop" Multiplicity="1" />
-          <End Role="transfer" Type="mydbModel.transfer" Multiplicity="*" />
+          <End Role="stops" Type="GtfsDataModel.Stop" Multiplicity="1" />
+          <End Role="transfer" Type="GtfsDataModel.Transfer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="stops">
               <PropertyRef Name="stop_id" />
@@ -585,9 +585,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="mydbModelStoreContainer" CdmEntityContainer="mydbEntities">
+        <EntityContainerMapping StorageEntityContainer="GtfsDataModelStoreContainer" CdmEntityContainer="GtfsEntities">
           <EntitySetMapping Name="agencies">
-            <EntityTypeMapping TypeName="mydbModel.agency">
+            <EntityTypeMapping TypeName="GtfsDataModel.Agency">
               <MappingFragment StoreEntitySet="agency">
                 <ScalarProperty Name="agency_id" ColumnName="agency_id" />
                 <ScalarProperty Name="agency_name" ColumnName="agency_name" />
@@ -598,8 +598,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="calendars">
-            <EntityTypeMapping TypeName="mydbModel.calendar">
+          <EntitySetMapping Name="calendar">
+            <EntityTypeMapping TypeName="GtfsDataModel.Calendar">
               <MappingFragment StoreEntitySet="calendar">
                 <ScalarProperty Name="service_id" ColumnName="service_id" />
                 <ScalarProperty Name="monday" ColumnName="monday" />
@@ -615,7 +615,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="frequencies">
-            <EntityTypeMapping TypeName="mydbModel.frequency">
+            <EntityTypeMapping TypeName="GtfsDataModel.Frequency">
               <MappingFragment StoreEntitySet="frequencies">
                 <ScalarProperty Name="trip_id" ColumnName="trip_id" />
                 <ScalarProperty Name="start_time" ColumnName="start_time" />
@@ -625,7 +625,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="routes">
-            <EntityTypeMapping TypeName="mydbModel.route">
+            <EntityTypeMapping TypeName="GtfsDataModel.Route">
               <MappingFragment StoreEntitySet="route">
                 <ScalarProperty Name="route_id" ColumnName="route_id" />
                 <ScalarProperty Name="agency_id" ColumnName="agency_id" />
@@ -640,7 +640,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="shapes">
-            <EntityTypeMapping TypeName="mydbModel.shape">
+            <EntityTypeMapping TypeName="GtfsDataModel.Shape">
               <MappingFragment StoreEntitySet="shapes">
                 <ScalarProperty Name="shape_id" ColumnName="shape_id" />
                 <ScalarProperty Name="shape_pt_lat" ColumnName="shape_pt_lat" />
@@ -651,7 +651,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="stop_times">
-            <EntityTypeMapping TypeName="mydbModel.stop_times">
+            <EntityTypeMapping TypeName="GtfsDataModel.StopTime">
               <MappingFragment StoreEntitySet="stop_times">
                 <ScalarProperty Name="trip_id" ColumnName="trip_id" />
                 <ScalarProperty Name="arrival_time" ColumnName="arrival_time" />
@@ -665,8 +665,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="stops">
-            <EntityTypeMapping TypeName="mydbModel.stop">
+          <EntitySetMapping Name="Stops">
+            <EntityTypeMapping TypeName="GtfsDataModel.Stop">
               <MappingFragment StoreEntitySet="stops">
                 <ScalarProperty Name="stop_id" ColumnName="stop_id" />
                 <ScalarProperty Name="stop_name" ColumnName="stop_name" />
@@ -681,7 +681,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="transfers">
-            <EntityTypeMapping TypeName="mydbModel.transfer">
+            <EntityTypeMapping TypeName="GtfsDataModel.Transfer">
               <MappingFragment StoreEntitySet="transfer">
                 <ScalarProperty Name="from_stop_id" ColumnName="from_stop_id" />
                 <ScalarProperty Name="to_stop_id" ColumnName="to_stop_id" />
@@ -691,7 +691,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="trips">
-            <EntityTypeMapping TypeName="mydbModel.trip">
+            <EntityTypeMapping TypeName="GtfsDataModel.Trip">
               <MappingFragment StoreEntitySet="trip">
                 <ScalarProperty Name="trip_id" ColumnName="trip_id" />
                 <ScalarProperty Name="service_id" ColumnName="service_id" />
@@ -717,7 +717,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

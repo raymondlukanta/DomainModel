@@ -12,14 +12,14 @@ namespace DomainModelling.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class transfer
+    public partial class Transfer
     {
         public string from_stop_id { get; set; }
         public string to_stop_id { get; set; }
         public int transfer_type { get; set; }
         public int min_transfer_time { get; set; }
     
-        public virtual stop stop { get; set; }
-        public virtual stop stop1 { get; set; }
+        public virtual Stop stops { get; set; }
+        public virtual Stop stops1 { get; set; }
     }
 }

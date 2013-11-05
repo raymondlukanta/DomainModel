@@ -12,13 +12,13 @@ namespace DomainModelling.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class frequency
+    public partial class Frequency
     {
         public string trip_id { get; set; }
         public System.TimeSpan start_time { get; set; }
         public System.TimeSpan end_time { get; set; }
         public int headway_secs { get; set; }
     
-        public virtual trip trip { get; set; }
+        public virtual Trip trip { get; set; }
     }
 }

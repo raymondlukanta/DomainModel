@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="51a355dde5074fe8a45eac1ab2a5c40a" Name="Diagram1">
+        <EntityTypeShape EntityType="GtfsDataModel.Agency" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GtfsDataModel.Calendar" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GtfsDataModel.Frequency" Width="1.5" PointX="7.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GtfsDataModel.Route" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GtfsDataModel.Shape" Width="1.5" PointX="2.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GtfsDataModel.StopTime" Width="1.5" PointX="10.5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GtfsDataModel.Stop" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GtfsDataModel.Transfer" Width="1.5" PointX="10.5" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GtfsDataModel.Trip" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="GtfsDataModel.route_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="GtfsDataModel.frequency_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="GtfsDataModel.trip_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="GtfsDataModel.stop_times_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="GtfsDataModel.stop_times_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="GtfsDataModel.transfer_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="GtfsDataModel.transfer_ibfk_2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

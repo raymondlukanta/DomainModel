@@ -12,7 +12,7 @@ namespace DomainModelling.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class shape
+    public partial class Shape
     {
         public string shape_id { get; set; }
         public double shape_pt_lat { get; set; }

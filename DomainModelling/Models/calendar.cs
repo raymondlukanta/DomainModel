@@ -12,7 +12,7 @@ namespace DomainModelling.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class calendar
+    public partial class Calendar
     {
         public string service_id { get; set; }
         public int monday { get; set; }

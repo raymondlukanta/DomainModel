@@ -12,13 +12,13 @@ namespace DomainModelling.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class stop
+    public partial class Stop
     {
-        public stop()
+        public Stop()
         {
-            this.stop_times = new HashSet<stop_times>();
-            this.transfers = new HashSet<transfer>();
-            this.transfers1 = new HashSet<transfer>();
+            this.stop_times = new HashSet<StopTime>();
+            this.transfer = new HashSet<Transfer>();
+            this.transfer1 = new HashSet<Transfer>();
         }
     
         public string stop_id { get; set; }
@@ -31,8 +31,8 @@ namespace DomainModelling.Models
         public string zone_id { get; set; }
         public string stop_url { get; set; }
     
-        public virtual ICollection<stop_times> stop_times { get; set; }
-        public virtual ICollection<transfer> transfers { get; set; }
-        public virtual ICollection<transfer> transfers1 { get; set; }
+        internal virtual ICollection<StopTime> stop_times { get; set; }
+        internal virtual ICollection<Transfer> transfer { get; set; }
+        internal virtual ICollection<Transfer> transfer1 { get; set; }
     }
 }

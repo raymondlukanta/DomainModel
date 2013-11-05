@@ -12,11 +12,11 @@ namespace DomainModelling.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class agency
+    public partial class Agency
     {
-        public agency()
+        public Agency()
         {
-            this.routes = new HashSet<route>();
+            this.route = new HashSet<Route>();
         }
     
         public string agency_id { get; set; }
@@ -26,6 +26,6 @@ namespace DomainModelling.Models
         public string agency_lang { get; set; }
         public string agency_phone { get; set; }
     
-        public virtual ICollection<route> routes { get; set; }
+        public virtual ICollection<Route> route { get; set; }
     }
 }
