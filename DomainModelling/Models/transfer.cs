@@ -16,10 +16,10 @@ namespace DomainModelling.Models
     {
         public string from_stop_id { get; set; }
         public string to_stop_id { get; set; }
-        public int transfer_type { get; set; }
-        public int min_transfer_time { get; set; }
+        public string transfer_type { get; set; }
+        public string min_transfer_time { get; set; }
     
-        public virtual Stop stops { get; set; }
-        public virtual Stop stops1 { get; set; }
+        internal virtual Stop from_stop { get; set; }
+        internal virtual Stop to_stop { get; set; }
     }
 }

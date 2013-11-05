@@ -12,14 +12,10 @@ namespace DomainModelling.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Frequency
+    public partial class CalendarDate
     {
-        public string trip_id { get; set; }
-        public string start_time { get; set; }
-        public string end_time { get; set; }
-        public string headway_secs { get; set; }
-        public string exact_times { get; set; }
-    
-        internal virtual Trip trip { get; set; }
+        public string service_id { get; set; }
+        public System.DateTime date { get; set; }
+        public string exception_type { get; set; }
     }
 }

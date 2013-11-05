@@ -12,21 +12,15 @@ namespace DomainModelling.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Agency
+    public partial class FareAttributes
     {
-        public Agency()
-        {
-            this.routes = new HashSet<Route>();
-        }
+        public string fare_id { get; set; }
+        public string price { get; set; }
+        public string currency_type { get; set; }
+        public string payment_method { get; set; }
+        public string transfers { get; set; }
+        public string transfer_duration { get; set; }
     
-        public string agency_id { get; set; }
-        public string agency_name { get; set; }
-        public string agency_url { get; set; }
-        public string agency_timezone { get; set; }
-        public string agency_lang { get; set; }
-        public string agency_phone { get; set; }
-        public string agency_fare_url { get; set; }
-    
-        internal virtual ICollection<Route> routes { get; set; }
+        internal virtual FareRules fare_rules { get; set; }
     }
 }

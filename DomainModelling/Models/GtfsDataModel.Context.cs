@@ -26,12 +26,15 @@ namespace DomainModelling.Models
         }
     
         public DbSet<Agency> agencies { get; set; }
-        public DbSet<Calendar> calendar { get; set; }
+        public DbSet<Calendar> calendars { get; set; }
+        public DbSet<CalendarDate> calendar_dates { get; set; }
+        public DbSet<FareAttributes> fare_attributes { get; set; }
+        public DbSet<FareRules> fare_rules { get; set; }
         public DbSet<Frequency> frequencies { get; set; }
         public DbSet<Route> routes { get; set; }
         public DbSet<Shape> shapes { get; set; }
         public DbSet<StopTime> stop_times { get; set; }
-        public DbSet<Stop> Stops { get; set; }
+        public DbSet<Stop> stops { get; set; }
         public DbSet<Transfer> transfers { get; set; }
         public DbSet<Trip> trips { get; set; }
     }

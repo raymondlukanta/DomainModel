@@ -20,7 +20,7 @@ namespace DomainModelling.Controllers
         public ActionResult About()
         {
             ListStops stop = new ListStops();
-            stop.stopList = db.Stops.ToList();
+            stop.stopList = db.stops.ToList();
 
             return View(stop);
         }

@@ -15,13 +15,13 @@ namespace DomainModelling.Api
         // GET api/<controller>
         public IEnumerable<Stop> Get()
         {
-            return db.Stops.ToList();
+            return db.stops.ToList();
         }
 
         // GET api/<controller>/5
         public Stop Get(string id)
         {
-            return db.Stops.Find(id);
+            return db.stops.Find(id);
         }
     }
 }

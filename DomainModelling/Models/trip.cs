@@ -16,20 +16,21 @@ namespace DomainModelling.Models
     {
         public Trip()
         {
-            this.frequencies = new HashSet<Frequency>();
             this.stop_times = new HashSet<StopTime>();
         }
     
-        public string trip_id { get; set; }
-        public string service_id { get; set; }
         public string route_id { get; set; }
+        public string service_id { get; set; }
+        public string trip_id { get; set; }
         public string trip_headsign { get; set; }
-        public Nullable<int> direction_id { get; set; }
+        public string trip_short_name { get; set; }
+        public string direction_id { get; set; }
         public string block_id { get; set; }
         public string shape_id { get; set; }
+        public string wheelchair_boarding { get; set; }
     
-        public virtual ICollection<Frequency> frequencies { get; set; }
-        public virtual Route route { get; set; }
-        public virtual ICollection<StopTime> stop_times { get; set; }
+        internal virtual Frequency frequency { get; set; }
+        internal virtual Route route { get; set; }
+        internal virtual ICollection<StopTime> stop_times { get; set; }
     }
 }

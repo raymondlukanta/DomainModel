@@ -16,7 +16,8 @@ namespace DomainModelling.Models
     {
         public Route()
         {
-            this.trip = new HashSet<Trip>();
+            this.fare_rules = new HashSet<FareRules>();
+            this.trips = new HashSet<Trip>();
         }
     
         public string route_id { get; set; }
@@ -24,12 +25,13 @@ namespace DomainModelling.Models
         public string route_short_name { get; set; }
         public string route_long_name { get; set; }
         public string route_desc { get; set; }
-        public int route_type { get; set; }
-        public string route_colour { get; set; }
+        public string route_type { get; set; }
         public string route_url { get; set; }
-        public string route_text_colour { get; set; }
+        public string route_color { get; set; }
+        public string route_text_color { get; set; }
     
-        public virtual Agency agency { get; set; }
-        public virtual ICollection<Trip> trip { get; set; }
+        internal virtual Agency agency { get; set; }
+        internal virtual ICollection<FareRules> fare_rules { get; set; }
+        internal virtual ICollection<Trip> trips { get; set; }
     }
 }
