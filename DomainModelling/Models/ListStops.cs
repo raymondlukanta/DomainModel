@@ -9,8 +9,9 @@ namespace DomainModelling.Models
     {
         public ListStops()
         {
-            this.stopList = new HashSet<stop>();
+            this.stopList = new HashSet<Stop>();
         }
-        public virtual ICollection<stop> stopList { get; set; } 
+
+        public virtual ICollection<Stop> stopList { get; set; } 
     }
 }

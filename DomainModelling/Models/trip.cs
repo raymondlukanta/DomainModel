@@ -12,24 +12,25 @@ namespace DomainModelling.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class trip
+    public partial class Trip
     {
-        public trip()
+        public Trip()
         {
-            this.frequencies = new HashSet<frequency>();
-            this.stop_times = new HashSet<stop_times>();
+            this.stop_times = new HashSet<StopTime>();
         }
     
-        public string trip_id { get; set; }
-        public string service_id { get; set; }
         public string route_id { get; set; }
+        public string service_id { get; set; }
+        public string trip_id { get; set; }
         public string trip_headsign { get; set; }
-        public Nullable<int> direction_id { get; set; }
+        public string trip_short_name { get; set; }
+        public string direction_id { get; set; }
         public string block_id { get; set; }
         public string shape_id { get; set; }
+        public string wheelchair_boarding { get; set; }
     
-        public virtual ICollection<frequency> frequencies { get; set; }
-        public virtual route route { get; set; }
-        public virtual ICollection<stop_times> stop_times { get; set; }
+        internal virtual Frequency frequency { get; set; }
+        internal virtual Route route { get; set; }
+        internal virtual ICollection<StopTime> stop_times { get; set; }
     }
 }

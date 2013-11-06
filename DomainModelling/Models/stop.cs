@@ -12,27 +12,31 @@ namespace DomainModelling.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class stop
+    public partial class Stop
     {
-        public stop()
+        public Stop()
         {
-            this.stop_times = new HashSet<stop_times>();
-            this.transfers = new HashSet<transfer>();
-            this.transfers1 = new HashSet<transfer>();
+            this.stop_times = new HashSet<StopTime>();
+            this.transfers_from = new HashSet<Transfer>();
+            this.transfers_to = new HashSet<Transfer>();
         }
     
         public string stop_id { get; set; }
+        public string stop_code { get; set; }
         public string stop_name { get; set; }
         public string stop_desc { get; set; }
-        public double stop_lat { get; set; }
-        public double stop_lon { get; set; }
-        public string location_type { get; set; }
-        public string parent_station { get; set; }
+        public Nullable<decimal> stop_lat { get; set; }
+        public Nullable<decimal> stop_lon { get; set; }
         public string zone_id { get; set; }
         public string stop_url { get; set; }
+        public string location_type { get; set; }
+        public string parent_station { get; set; }
+        public string stop_timezone { get; set; }
+        public string wheelchair_boarding { get; set; }
+        public string wheelchair_accessible { get; set; }
     
-        public virtual ICollection<stop_times> stop_times { get; set; }
-        public virtual ICollection<transfer> transfers { get; set; }
-        public virtual ICollection<transfer> transfers1 { get; set; }
+        internal virtual ICollection<StopTime> stop_times { get; set; }
+        internal virtual ICollection<Transfer> transfers_from { get; set; }
+        internal virtual ICollection<Transfer> transfers_to { get; set; }
     }
 }

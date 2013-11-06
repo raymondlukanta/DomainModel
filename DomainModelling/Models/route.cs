@@ -12,11 +12,12 @@ namespace DomainModelling.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class route
+    public partial class Route
     {
-        public route()
+        public Route()
         {
-            this.trips = new HashSet<trip>();
+            this.fare_rules = new HashSet<FareRules>();
+            this.trips = new HashSet<Trip>();
         }
     
         public string route_id { get; set; }
@@ -24,12 +25,13 @@ namespace DomainModelling.Models
         public string route_short_name { get; set; }
         public string route_long_name { get; set; }
         public string route_desc { get; set; }
-        public int route_type { get; set; }
-        public string route_colour { get; set; }
+        public string route_type { get; set; }
         public string route_url { get; set; }
-        public string route_text_colour { get; set; }
+        public string route_color { get; set; }
+        public string route_text_color { get; set; }
     
-        public virtual agency agency { get; set; }
-        public virtual ICollection<trip> trips { get; set; }
+        internal virtual Agency agency { get; set; }
+        internal virtual ICollection<FareRules> fare_rules { get; set; }
+        internal virtual ICollection<Trip> trips { get; set; }
     }
 }

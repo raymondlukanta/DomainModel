@@ -12,17 +12,15 @@ namespace DomainModelling.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Calendar
+    public partial class FareRules
     {
-        public string service_id { get; set; }
-        public int monday { get; set; }
-        public int tuesday { get; set; }
-        public int wednesday { get; set; }
-        public int thursday { get; set; }
-        public int friday { get; set; }
-        public int saturday { get; set; }
-        public int sunday { get; set; }
-        public System.DateTime start_date { get; set; }
-        public System.DateTime end_date { get; set; }
+        public string fare_id { get; set; }
+        public string route_id { get; set; }
+        public string origin_id { get; set; }
+        public string destination_id { get; set; }
+        public string contains_id { get; set; }
+    
+        internal virtual FareAttributes fare_attributes { get; set; }
+        internal virtual Route route { get; set; }
     }
 }

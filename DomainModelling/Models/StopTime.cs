@@ -12,19 +12,19 @@ namespace DomainModelling.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class stop_times
+    public partial class StopTime
     {
         public string trip_id { get; set; }
-        public System.TimeSpan arrival_time { get; set; }
-        public System.TimeSpan departure_time { get; set; }
+        public string arrival_time { get; set; }
+        public string departure_time { get; set; }
         public string stop_id { get; set; }
-        public string stop_headsign { get; set; }
-        public Nullable<int> pickup_type { get; set; }
-        public Nullable<int> dropoff_type { get; set; }
-        public Nullable<double> shape_distance_travelled { get; set; }
         public int stop_sequence { get; set; }
+        public string stop_headsign { get; set; }
+        public string pickup_type { get; set; }
+        public string drop_off_type { get; set; }
+        public string shape_dist_traveled { get; set; }
     
-        public virtual trip trip { get; set; }
-        public virtual stop stop { get; set; }
+        internal virtual Trip trip { get; set; }
+        internal virtual Stop stop { get; set; }
     }
 }

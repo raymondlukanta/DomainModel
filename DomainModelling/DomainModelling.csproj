@@ -40,14 +40,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="MySql.Data, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Program Files (x86)\MySQL\MySQL for Visual Studio 1.0.2\Assemblies\v4.0\MySql.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="MySql.Data.Entity, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Program Files (x86)\MySQL\MySQL for Visual Studio 1.0.2\Assemblies\v4.0\MySql.Data.Entity.dll</HintPath>
-    </Reference>
+    <Reference Include="MySql.Data, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data.Entity, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="MySql.Web, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Program Files (x86)\MySQL\MySQL for Visual Studio 1.0.2\Assemblies\v4.0\MySql.Web.dll</HintPath>
@@ -190,6 +184,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\ShapeController.cs" />
+    <Compile Include="Api\StopController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -198,48 +194,57 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\agency.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+    <Compile Include="Models\Agency.cs">
+      <DependentUpon>GtfsDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\calendar.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+    <Compile Include="Models\Calendar.cs">
+      <DependentUpon>GtfsDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataModel.Context.cs">
+    <Compile Include="Models\CalendarDate.cs">
+      <DependentUpon>GtfsDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FareAttributes.cs">
+      <DependentUpon>GtfsDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FareRules.cs">
+      <DependentUpon>GtfsDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Frequency.cs">
+      <DependentUpon>GtfsDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GtfsDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.Context.tt</DependentUpon>
+      <DependentUpon>GtfsDataModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataModel.cs">
+    <Compile Include="Models\GtfsDataModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>GtfsDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataModel.Designer.cs">
+    <Compile Include="Models\GtfsDataModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\frequency.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>GtfsDataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\ListStops.cs" />
-    <Compile Include="Models\route.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+    <Compile Include="Models\Route.cs">
+      <DependentUpon>GtfsDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\shape.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+    <Compile Include="Models\Shape.cs">
+      <DependentUpon>GtfsDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\stop.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+    <Compile Include="Models\Stop.cs">
+      <DependentUpon>GtfsDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\stop_times.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+    <Compile Include="Models\StopTime.cs">
+      <DependentUpon>GtfsDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\transfer.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+    <Compile Include="Models\Transfer.cs">
+      <DependentUpon>GtfsDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\trip.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+    <Compile Include="Models\Trip.cs">
+      <DependentUpon>GtfsDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -300,22 +305,22 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <EntityDeploy Include="Models\DataModel.edmx">
+    <EntityDeploy Include="Models\GtfsDataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>GtfsDataModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\DataModel.Context.tt">
+    <Content Include="Models\GtfsDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-      <LastGenOutput>DataModel.Context.cs</LastGenOutput>
+      <DependentUpon>GtfsDataModel.edmx</DependentUpon>
+      <LastGenOutput>GtfsDataModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\DataModel.edmx.diagram">
-      <DependentUpon>DataModel.edmx</DependentUpon>
+    <Content Include="Models\GtfsDataModel.edmx.diagram">
+      <DependentUpon>GtfsDataModel.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\DataModel.tt">
+    <Content Include="Models\GtfsDataModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-      <LastGenOutput>DataModel.cs</LastGenOutput>
+      <DependentUpon>GtfsDataModel.edmx</DependentUpon>
+      <LastGenOutput>GtfsDataModel.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
@@ -362,6 +367,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Home\Map.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
