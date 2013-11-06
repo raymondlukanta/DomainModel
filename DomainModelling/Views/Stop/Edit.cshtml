@@ -1,0 +1,132 @@
+﻿@model DomainModelling.Models.Stop
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Stop</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.stop_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.stop_id)
+            @Html.ValidationMessageFor(model => model.stop_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.stop_code)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.stop_code)
+            @Html.ValidationMessageFor(model => model.stop_code)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.stop_name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.stop_name)
+            @Html.ValidationMessageFor(model => model.stop_name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.stop_desc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.stop_desc)
+            @Html.ValidationMessageFor(model => model.stop_desc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.stop_lat)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.stop_lat)
+            @Html.ValidationMessageFor(model => model.stop_lat)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.stop_lon)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.stop_lon)
+            @Html.ValidationMessageFor(model => model.stop_lon)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.zone_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.zone_id)
+            @Html.ValidationMessageFor(model => model.zone_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.stop_url)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.stop_url)
+            @Html.ValidationMessageFor(model => model.stop_url)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.location_type)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.location_type)
+            @Html.ValidationMessageFor(model => model.location_type)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.parent_station)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.parent_station)
+            @Html.ValidationMessageFor(model => model.parent_station)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.stop_timezone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.stop_timezone)
+            @Html.ValidationMessageFor(model => model.stop_timezone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.wheelchair_boarding)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.wheelchair_boarding)
+            @Html.ValidationMessageFor(model => model.wheelchair_boarding)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.wheelchair_accessible)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.wheelchair_accessible)
+            @Html.ValidationMessageFor(model => model.wheelchair_accessible)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

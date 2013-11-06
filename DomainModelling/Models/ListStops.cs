@@ -12,6 +12,6 @@ namespace DomainModelling.Models
             this.stopList = new HashSet<Stop>();
         }
 
-        public virtual ICollection<Stop> stopList { get; set; } 
+        public virtual IEnumerable<Stop> stopList { get; set; } 
     }
 }

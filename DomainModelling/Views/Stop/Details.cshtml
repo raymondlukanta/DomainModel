@@ -1,0 +1,106 @@
+﻿@model DomainModelling.Models.Stop
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Stop</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.stop_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.stop_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.stop_code)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.stop_code)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.stop_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.stop_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.stop_desc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.stop_desc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.stop_lat)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.stop_lat)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.stop_lon)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.stop_lon)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.zone_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.zone_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.stop_url)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.stop_url)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.location_type)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.location_type)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.parent_station)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.parent_station)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.stop_timezone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.stop_timezone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.wheelchair_boarding)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.wheelchair_boarding)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.wheelchair_accessible)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.wheelchair_accessible)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id=Model.stop_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

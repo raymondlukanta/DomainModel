@@ -1,0 +1,105 @@
+﻿@model IEnumerable<DomainModelling.Models.Stop>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.stop_id)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.stop_code)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.stop_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stop_desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stop_lat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stop_lon)
+        </th>
+      @*  <th>
+            @Html.DisplayNameFor(model => model.zone_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stop_url)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.location_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.parent_station)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stop_timezone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wheelchair_boarding)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wheelchair_accessible)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.stop_id)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.stop_code)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.stop_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stop_desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stop_lat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stop_lon)
+        </td>
+       @* <td>
+            @Html.DisplayFor(modelItem => item.zone_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stop_url)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.location_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.parent_station)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stop_timezone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wheelchair_boarding)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wheelchair_accessible)
+        </td>*@
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.stop_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.stop_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.stop_id })
+        </td>
+    </tr>
+}
+
+</table>

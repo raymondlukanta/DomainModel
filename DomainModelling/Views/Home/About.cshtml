@@ -13,34 +13,6 @@
 
 @section scripts {
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&libraries=geometry,places")></script>
-<script type="text/javascript">
-    function createMap(mapContainer) {
-        var mapOptions = {
-            zoom: 13,
-            center: new google.maps.LatLng(40.680051, -73.583913),
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-
-        return new google.maps.Map(mapContainer, mapOptions);
-    }
-
-    function plotMarker(latitude, longitude, name) {
-        //var image = {
-        //    url: "images/marker.png",
-        //    origin: new google.maps.Point(0, 0),
-        //    anchor: new google.maps.Point(5, 5)
-        //};
-
-        marker = new google.maps.Marker({
-            position: new google.maps.LatLng(latitude, longitude),
-            map: map,
-            title: name
-            //url: source.name,
-            // icon: image
-        });
-    }
-
-</script>
 
 <script type="text/javascript">
     var map;

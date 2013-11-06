@@ -1,0 +1,81 @@
+﻿@model IEnumerable<DomainModelling.Models.StopTime>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.trip_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.arrival_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.departure_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stop_id)
+        </th>
+      @*  <th>
+            @Html.DisplayNameFor(model => model.stop_sequence)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stop_headsign)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pickup_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.drop_off_type)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.shape_dist_traveled)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.trip_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.arrival_time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.departure_time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stop_id)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.stop_sequence)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stop_headsign)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pickup_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.drop_off_type)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.shape_dist_traveled)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id1=item.stop_sequence, id2=item.trip_id }) |
+            @Html.ActionLink("Details", "Details", new { id1=item.stop_sequence, id2=item.trip_id}) |
+            @Html.ActionLink("Delete", "Delete", new { id1=item.stop_sequence, id2=item.trip_id })
+        </td>
+    </tr>
+}
+
+</table>

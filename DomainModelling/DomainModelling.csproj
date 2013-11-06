@@ -191,6 +191,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StopController.cs" />
+    <Compile Include="Controllers\StopTimeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -368,6 +370,16 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\Map.cshtml" />
+    <Content Include="Views\Stop\Index.cshtml" />
+    <Content Include="Views\Stop\Details.cshtml" />
+    <Content Include="Views\Stop\Create.cshtml" />
+    <Content Include="Views\Stop\Edit.cshtml" />
+    <Content Include="Views\Stop\Delete.cshtml" />
+    <Content Include="Views\StopTime\Index.cshtml" />
+    <Content Include="Views\StopTime\Details.cshtml" />
+    <Content Include="Views\StopTime\Create.cshtml" />
+    <Content Include="Views\StopTime\Edit.cshtml" />
+    <Content Include="Views\StopTime\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

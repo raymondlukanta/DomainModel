@@ -1,0 +1,78 @@
+﻿@model DomainModelling.Models.StopTime
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>StopTime</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.trip_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.trip_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.arrival_time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.arrival_time)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.departure_time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.departure_time)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.stop_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.stop_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.stop_sequence)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.stop_sequence)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.stop_headsign)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.stop_headsign)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.pickup_type)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.pickup_type)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.drop_off_type)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.drop_off_type)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shape_dist_traveled)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shape_dist_traveled)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id1=Model.stop_sequence, id2=Model.trip_id  }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

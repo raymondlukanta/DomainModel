@@ -1,0 +1,100 @@
+﻿@model DomainModelling.Models.StopTime
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>StopTime</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.trip_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.trip_id)
+            @Html.ValidationMessageFor(model => model.trip_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.arrival_time)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.arrival_time)
+            @Html.ValidationMessageFor(model => model.arrival_time)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.departure_time)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.departure_time)
+            @Html.ValidationMessageFor(model => model.departure_time)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.stop_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.stop_id)
+            @Html.ValidationMessageFor(model => model.stop_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.stop_sequence)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.stop_sequence)
+            @Html.ValidationMessageFor(model => model.stop_sequence)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.stop_headsign)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.stop_headsign)
+            @Html.ValidationMessageFor(model => model.stop_headsign)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.pickup_type)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.pickup_type)
+            @Html.ValidationMessageFor(model => model.pickup_type)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.drop_off_type)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.drop_off_type)
+            @Html.ValidationMessageFor(model => model.drop_off_type)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shape_dist_traveled)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shape_dist_traveled)
+            @Html.ValidationMessageFor(model => model.shape_dist_traveled)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
