@@ -14,6 +14,32 @@
 <script type="text/javascript">
     var map;
     var array = new Array();
+
+    function createMap(mapContainer) {
+        var mapOptions = {
+            zoom: 13,
+            center: new google.maps.LatLng(40.680051, -73.583913),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        return new google.maps.Map(mapContainer, mapOptions);
+    }
+    function plotMarker(latitude, longitude, name) {
+        //var image = {
+        //    url: "images/marker.png",
+        //    origin: new google.maps.Point(0, 0),
+        //    anchor: new google.maps.Point(5, 5)
+        //};
+
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(latitude, longitude),
+            map: map,
+            title: name
+            //url: source.name,
+            // icon: image
+        });
+    }
+
     $(document).ready(function () {
         map = createMap(document.getElementById('map_pilihlokasi'));
          @foreach (var stop in Model.stopList)
